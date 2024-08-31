@@ -1,0 +1,26 @@
+---
+import socialMedia from "../data/socialMedia";
+
+interface Props {
+  width: string;
+}
+
+const { width } = Astro.props;
+---
+
+<ul class="flex gap-2">
+  {
+    socialMedia.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          target={link.target}
+          class="hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-70 hover:opacity-100"
+          style="font-size: 0.75rem;"
+        >
+          <link.icon width={width} />
+        </a>
+      </li>
+    ))
+  }
+</ul>

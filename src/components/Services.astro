@@ -1,0 +1,32 @@
+---
+import services from "../data/services";
+
+interface Props {
+  clinicName: string;
+}
+
+const { clinicName } = Astro.props;
+---
+
+<section class="container mx-auto px-10 py-20" id="servicios">
+  <h3 class="uppercase text-3xl font-black opacity-60 text-center mb-12">
+    Porque escoger {clinicName}
+  </h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {
+      services.map((service) => (
+        <div class="flex flex-col items-center mt-5">
+          <span class="p-5 mb-4 rounded-full bg-[#415962]">
+            <service.icon />
+          </span>
+          <h5 class="text-[#415962] font-bold text-3xl text-center">
+            {service.title}
+          </h5>
+          <p class="text-[#879296] text-center text-xl leading-8 mt-4">
+            {service.text}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import prices from "../data/prices";
+---
+
+<section class="container mx-auto px-10 pt-5 pb-16 max-lg:px-0" id="precios">
+  <h3 class="uppercase text-3xl font-black opacity-60 text-center pb-14">
+    Precios
+  </h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 p-5">
+    {
+      prices.map((price) => (
+        <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow overflow-hidden">
+          <div class="bg-[#81c683] py-6 w-full">
+            <h5 class="text-3xl font-semibold text-white text-center">
+              {price.title}
+            </h5>
+          </div>
+
+          <div class="py-10 text-center">
+            <span class="text-6xl font-bold text-[#81c683]">{price.price}</span>
+            <>
+              <span class="text-[#81c683] text-2xl">€</span>
+              <br />
+            </>
+            <span class="text-gray-400 text-sm">{price.description}</span>
+          </div>
+
+          <div class="px-6 pb-6 text-center">
+            <button class="bg-[#81c683] text-white py-4 px-8 rounded-lg hover:bg-[#69bb6c]">
+              Reserva ahora
+            </button>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

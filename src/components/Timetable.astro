@@ -1,0 +1,38 @@
+---
+import Schedule from "./icons/Schedule.astro";
+---
+
+<section class="p-5" id="horario">
+  <div
+    class="max-w-4xl mx-auto grid justify-center items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 px-6 sm:px-10 py-16 border border-gray-200 rounded-lg shadow-lg"
+  >
+    <div class="flex flex-col items-center">
+      <Schedule />
+      <h2 class="text-4xl mt-4 font-bold text-center mb-4 text-[#81c683]">
+        HORARIO
+      </h2>
+    </div>
+    <div
+      class="bg-gradient-to-r from-[#cff0d0] to-[#81c6839f] text-gray-800 py-8 px-4 sm:px-6 border border-gray-200 rounded-lg shadow-md"
+    >
+      <div class="space-y-4">
+        <div
+          class="flex justify-between items-center bg-white py-4 px-4 rounded-lg shadow-sm transition duration-300 ease-in-out hover:shadow-lg"
+        >
+          <div class="flex items-center">
+            <span class="font-semibold text-lg">Lunes - Viernes</span>
+          </div>
+          <span class="font-bold text-lg">8:00 - 20:00</span>
+        </div>
+        <div
+          class="flex justify-between items-center bg-white py-4 px-4 rounded-lg shadow-sm transition duration-300 ease-in-out hover:shadow-lg"
+        >
+          <div class="flex items-center">
+            <span class="font-semibold text-lg">Sábado & Domingo</span>
+          </div>
+          <span class="font-bold text-lg">Cerrado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

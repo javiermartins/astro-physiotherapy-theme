@@ -1,0 +1,56 @@
+---
+import SocialMedia from "./SocialMedia.astro";
+import Email from "./icons/contact/Email.astro";
+import contact from "../data/contact";
+---
+
+<footer
+  class="px-8 py-16 lg:py-20 border-t border-neutral-300/50 bg-[#415962] text-white"
+>
+  <div class="container">
+    <div class="flex flex-col gap-8 lg:flex-row lg:justify-between">
+      <div class="flex flex-col gap-8 pt-2">
+        <ul class="flex flex-col gap-2 text-[22px]">
+          <li>
+            <a href="#"> Política de privacidad </a>
+          </li>
+          <li>
+            <a href="#"> Política de cookies </a>
+          </li>
+          <li>
+            <a href="#"> Aviso legal </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-4 lg:flex-row lg:gap-8">
+        <div class="flex flex-col gap-4">
+          <h4 class="text-4xl">Contacto</h4>
+          <ul class="flex flex-col gap-2 text-[22px]">
+            {
+              contact.map((info) => (
+                <li class="flex">
+                  <info.icon />
+                  <a href={info.url} class="ml-2">
+                    {info.text}
+                  </a>
+                </li>
+              ))
+            }
+            <li class="flex">
+              <Email />
+              <a href="mailto:fisioterapia@astro.com" class="ml-2"
+                >fisioterapia@astro.com</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 lg:flex-row lg:gap-8">
+        <div class="flex flex-col gap-4">
+          <h4 class="text-3xl">Redes sociales</h4>
+          <SocialMedia width="2.5rem" />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

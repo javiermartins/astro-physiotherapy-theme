@@ -1,0 +1,31 @@
+---
+import SocialMedia from "./SocialMedia.astro";
+import contact from "../data/contact";
+---
+
+<div id="top-bar" class="flex justify-between p-2 bg-[#415962]">
+  <div class="top-bar-left">
+    {
+      contact.map((info) => (
+        <div class="mr-5 text-white">
+          <a href={info.url} target={info.target} class="contact">
+            <info.icon />
+            <span class="ml-2 hidden sm:flex">{info.text}</span>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+  <div class="top-bar-right">
+    <SocialMedia width="2rem" />
+  </div>
+</div>
+
+<style>
+  .top-bar-left,
+  .top-bar-right,
+  .contact {
+    display: flex;
+    align-items: center;
+  }
+</style>

@@ -1,4 +1,6 @@
-const prices = [
+import type { Price } from "../types/price";
+
+const prices: Price[] = [
     {
         title: "Sesión de fisioterapia",
         price: "30",

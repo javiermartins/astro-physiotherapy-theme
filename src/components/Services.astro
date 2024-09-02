@@ -2,15 +2,15 @@
 import services from "../data/services";
 
 interface Props {
-  clinicName: string;
+  clinicData: ClinicData;
 }
 
-const { clinicName } = Astro.props;
+const { clinicData } = Astro.props;
 ---
 
 <section class="container mx-auto px-10 py-20" id="servicios">
   <h3 class="uppercase text-3xl font-black opacity-60 text-center mb-12">
-    Porque escoger {clinicName}
+    Porque escoger {clinicData.NAME}
   </h3>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
     {

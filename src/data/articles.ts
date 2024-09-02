@@ -1,4 +1,6 @@
-const articles = [
+import type { Articles } from "../types/articles";
+
+const articles: Articles[] = [
     {
         "id": "beneficios-fisioterapia",
         "title": "Los Beneficios de la Fisioterapia para el Dolor de Espalda",

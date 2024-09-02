@@ -1,3 +1,11 @@
+---
+interface Props {
+  clinicData: ClinicData;
+}
+
+const { clinicData } = Astro.props;
+---
+
 <section class="text-white text-3xl w-full bg-[#81c683] py-20 my-16">
   <article class="flex justify-center items-center">
     <div class="max-w-4xl flex flex-col justify-center items-center">
@@ -7,7 +15,7 @@
         para guiarte en cada paso hacia una mejor movilidad y bienestar.
       </p>
       <a
-        href="#"
+        href={`tel:${clinicData.PHONE}`}
         class="text-[#ffffff] bg-[#ffa51e] focus:ring-4 focus:ring-blue-300 font-bold text-base px-10 py-4 mt-5 transition duration-300 ease-in-out transform hover:scale-110"
         >Pide cita ahora</a
       >

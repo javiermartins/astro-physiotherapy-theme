@@ -1,17 +1,19 @@
 import Phone from "../components/icons/contact/Phone.astro";
 import Map from "../components/icons/contact/Map.astro";
+import clinicData from "../data/clinicData";
+import type { Contact } from "../types/contact";
 
 
-const contact = [
+const contact: Contact[] = [
     {
-        text: "Calle AstroFisio, 4",
-        url: "https://www.google.com/maps/place/#",
+        text: clinicData.UBICATION.text,
+        url: clinicData.UBICATION.url,
         target: "_blank",
         icon: Map
     },
     {
-        text: "555-1234567",
-        url: "tel:555-1234567",
+        text: clinicData.PHONE,
+        url: `tel:${clinicData.PHONE}`,
         target: "_self",
         icon: Phone
     },

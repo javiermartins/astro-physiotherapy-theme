@@ -2,6 +2,12 @@
 import SocialMedia from "./SocialMedia.astro";
 import Email from "./icons/contact/Email.astro";
 import contact from "../data/contact";
+
+interface Props {
+  clinicData: ClinicData;
+}
+
+const { clinicData } = Astro.props;
 ---
 
 <footer
@@ -12,13 +18,13 @@ import contact from "../data/contact";
       <div class="flex flex-col gap-8 pt-2">
         <ul class="flex flex-col gap-2 text-[22px]">
           <li class="hover:opacity-70 duration-300">
-            <a href="#"> Política de privacidad </a>
+            <a href="/"> Política de privacidad </a>
           </li>
           <li class="hover:opacity-70 duration-300">
-            <a href="#"> Política de cookies </a>
+            <a href="/"> Política de cookies </a>
           </li>
           <li class="hover:opacity-70 duration-300">
-            <a href="#"> Aviso legal </a>
+            <a href="/"> Aviso legal </a>
           </li>
         </ul>
       </div>
@@ -38,8 +44,8 @@ import contact from "../data/contact";
             }
             <li class="flex hover:opacity-70 duration-300">
               <Email />
-              <a href="mailto:fisioterapia@astro.com" class="ml-2"
-                >fisioterapia@astro.com</a
+              <a href={`mailto:${clinicData.EMAIL}`} class="ml-2"
+                >{clinicData.EMAIL}</a
               >
             </li>
           </ul>

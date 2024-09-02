@@ -5,10 +5,10 @@ import Menu from "./icons/Menu.astro";
 import Close from "./icons/Close.astro";
 
 interface Props {
-  clinicName: string;
+  clinicData: ClinicData;
 }
 
-const { clinicName } = Astro.props;
+const { clinicData } = Astro.props;
 ---
 
 <TopBar />
@@ -17,17 +17,17 @@ const { clinicName } = Astro.props;
     <div
       class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
     >
-      <a href="#" class="flex items-center">
+      <a href="/" class="flex items-center">
         <img src="/img/logo.webp" class="mr-3 h-[4.5rem]" alt="Logo" />
         <span
           class="text-[#415962] self-center text-xl font-semibold whitespace-nowrap"
         >
-          {clinicName}
+          {clinicData.NAME}
         </span>
       </a>
       <div class="flex items-center lg:order-2">
         <a
-          href="#"
+          href={`tel:${clinicData.PHONE}`}
           class="hidden lg:flex text-white bg-[#415962] hover:bg-[#394d55] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 transition duration-300 ease-in-out transform hover:scale-110"
         >
           Pide cita ahora

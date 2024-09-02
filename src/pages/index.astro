@@ -9,20 +9,20 @@ import Timetable from "../components/Timetable.astro";
 import Prices from "../components/Prices.astro";
 import Blog from "../components/Blog.astro";
 
-const clinicName = "AstroFisio";
+import clinicData from "../data/clinicData";
 ---
 
-<Layout title={clinicName}>
-  <Header clinicName={clinicName} />
+<Layout title={clinicData.NAME}>
+  <Header clinicData={clinicData} />
   <main>
     <Hero />
-    <Services clinicName={clinicName} />
-    <Prices />
+    <Services clinicData={clinicData} />
+    <Prices clinicData={clinicData} />
     <Timetable />
-    <TextBanner />
+    <TextBanner clinicData={clinicData} />
     <Blog />
   </main>
-  <Footer />
+  <Footer clinicData={clinicData} />
 </Layout>
 
 <style></style>

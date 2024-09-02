@@ -16,10 +16,10 @@ const { clinicData } = Astro.props;
     {
       services.map((service) => (
         <div class="flex flex-col items-center mt-5">
-          <span class="p-5 mb-4 rounded-full bg-[#415962]">
+          <span class="p-5 mb-4 rounded-full bg-primary">
             <service.icon />
           </span>
-          <h5 class="text-[#415962] font-bold text-3xl text-center flex flex-1 items-center">
+          <h5 class="text-primary font-bold text-3xl text-center flex flex-1 items-center">
             {service.title}
           </h5>
           <p class="text-[#879296] text-center text-xl leading-8 mt-4">

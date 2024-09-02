@@ -20,7 +20,7 @@ const { clinicData } = Astro.props;
       <a href="/" class="flex items-center">
         <img src="/img/logo.webp" class="mr-3 h-[4.5rem]" alt="Logo" />
         <span
-          class="text-[#415962] self-center text-xl font-semibold whitespace-nowrap"
+          class="text-primary self-center text-xl font-semibold whitespace-nowrap"
         >
           {clinicData.NAME}
         </span>
@@ -28,7 +28,7 @@ const { clinicData } = Astro.props;
       <div class="flex items-center lg:order-2">
         <a
           href={`tel:${clinicData.PHONE}`}
-          class="hidden lg:flex text-white bg-[#415962] hover:bg-[#394d55] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 transition duration-300 ease-in-out transform hover:scale-110"
+          class="hidden lg:flex text-white bg-primary hover:bg-[#394d55] focus:ring-4 focus:ring-blue-300 font-medium text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 transition duration-300 ease-in-out transform hover:scale-110"
         >
           Pide cita ahora
         </a>
@@ -54,7 +54,7 @@ const { clinicData } = Astro.props;
               <li>
                 <a
                   href={option.path}
-                  class="text-xl block py-2 pr-4 pl-3 text-[#415962] rounded lg:bg-transparent lg:p-0 transition-transform duration-300 transform hover:scale-110"
+                  class="text-xl block py-2 pr-4 pl-3 text-primary rounded lg:bg-transparent lg:p-0 transition-transform duration-300 transform hover:scale-110"
                   aria-current="page"
                 >
                   {option.label}

@@ -16,16 +16,18 @@ const { clinicData } = Astro.props;
     {
       prices.map((price) => (
         <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow overflow-hidden">
-          <div class="bg-[#81c683] py-6 w-full">
+          <div class="bg-secondary-500 py-6 w-full">
             <h5 class="text-3xl font-semibold text-white text-center">
               {price.title}
             </h5>
           </div>
 
           <div class="py-10 text-center">
-            <span class="text-6xl font-bold text-[#81c683]">{price.price}</span>
+            <span class="text-6xl font-bold text-secondary-500">
+              {price.price}
+            </span>
             <>
-              <span class="text-[#81c683] text-2xl">€</span>
+              <span class="text-secondary-500 text-2xl">€</span>
               <br />
             </>
             <span class="text-gray-400 text-sm">{price.description}</span>
@@ -33,7 +35,7 @@ const { clinicData } = Astro.props;
 
           <div class="px-6 pb-6 text-center">
             <a href={`tel:${clinicData.PHONE}`}>
-              <button class="bg-[#81c683] text-white py-4 px-8 rounded-lg hover:bg-[#69bb6c] transition duration-300 ease-in-out transform hover:scale-110">
+              <button class="bg-secondary-500 text-white py-4 px-8 rounded-lg hover:bg-[#69bb6c] transition duration-300 ease-in-out transform hover:scale-110">
                 Reserva ahora
               </button>
             </a>

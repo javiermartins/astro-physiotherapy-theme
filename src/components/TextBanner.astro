@@ -6,7 +6,7 @@ interface Props {
 const { clinicData } = Astro.props;
 ---
 
-<section class="text-white text-3xl w-full bg-[#81c683] py-20 my-16">
+<section class="text-white text-3xl w-full bg-secondary-500 py-20 my-16">
   <article class="flex justify-center items-center">
     <div class="max-w-4xl flex flex-col justify-center items-center">
       <p class="text-2xl pt-6 opacity-85 animate-slidein px-8 text-center">
@@ -16,7 +16,7 @@ const { clinicData } = Astro.props;
       </p>
       <a
         href={`tel:${clinicData.PHONE}`}
-        class="text-[#ffffff] bg-[#ffa51e] focus:ring-4 focus:ring-blue-300 font-bold text-base px-10 py-4 mt-5 transition duration-300 ease-in-out transform hover:scale-110"
+        class="text-[#ffffff] bg-accent focus:ring-4 focus:ring-blue-300 font-bold text-base px-10 py-4 mt-5 transition duration-300 ease-in-out transform hover:scale-110"
         >Pide cita ahora</a
       >
     </div>

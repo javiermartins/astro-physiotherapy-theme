@@ -11,13 +11,13 @@ import contact from "../data/contact";
     <div class="flex flex-col gap-8 lg:flex-row lg:justify-between">
       <div class="flex flex-col gap-8 pt-2">
         <ul class="flex flex-col gap-2 text-[22px]">
-          <li>
+          <li class="hover:opacity-70 duration-300">
             <a href="#"> Política de privacidad </a>
           </li>
-          <li>
+          <li class="hover:opacity-70 duration-300">
             <a href="#"> Política de cookies </a>
           </li>
-          <li>
+          <li class="hover:opacity-70 duration-300">
             <a href="#"> Aviso legal </a>
           </li>
         </ul>
@@ -28,7 +28,7 @@ import contact from "../data/contact";
           <ul class="flex flex-col gap-2 text-[22px]">
             {
               contact.map((info) => (
-                <li class="flex">
+                <li class="flex hover:opacity-70 duration-300">
                   <info.icon />
                   <a href={info.url} class="ml-2">
                     {info.text}
@@ -36,7 +36,7 @@ import contact from "../data/contact";
                 </li>
               ))
             }
-            <li class="flex">
+            <li class="flex hover:opacity-70 duration-300">
               <Email />
               <a href="mailto:fisioterapia@astro.com" class="ml-2"
                 >fisioterapia@astro.com</a

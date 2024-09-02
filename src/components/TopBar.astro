@@ -7,7 +7,7 @@ import contact from "../data/contact";
   <div class="top-bar-left">
     {
       contact.map((info) => (
-        <div class="mr-5 text-white">
+        <div class="mr-5 text-white hover:opacity-70 duration-300">
           <a href={info.url} target={info.target} class="contact">
             <info.icon />
             <span class="ml-2 hidden sm:flex">{info.text}</span>

@@ -1,1 +1,36 @@
-<section id="blog"></section>
+---
+import articles from "../data/articles";
+---
+
+<section id="blog" class="pb-20">
+  <h3 class="uppercase text-3xl font-black opacity-60 text-center pb-6">
+    Blog
+  </h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-2 px-12">
+    {
+      articles.map((article) => (
+        <article class="max-w-sm bg-white border border-gray-200 m-auto rounded-lg shadow group hover:bg-gray-200 cursor-pointer transition duration-300">
+          <a href={`blog/${article.id}`}>
+            <img
+              class="rounded-lg transition-transform duration-300 transform group-hover:scale-95"
+              src={article.img}
+              alt="Imagen del artículo"
+              transition:name={`image ${article.id}`}
+            />
+            <div class="p-5">
+              <h5
+                class="mb-2 text-xl font-bold tracking-tight text-gray-900"
+                transition:name={`title ${article.id}`}
+              >
+                {article.title}
+              </h5>
+              <div class="line-clamp-3 mb-3 font-normal text-gray-700 dark:text-gray-400">
+                {article.content}
+              </div>
+            </div>
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</section>

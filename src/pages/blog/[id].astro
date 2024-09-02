@@ -1,0 +1,44 @@
+---
+import Back from "../../components/icons/Back.astro";
+import articles from "../../data/articles";
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+const article = articles.find((article) => article.id.toString() === id);
+
+export async function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { id: article.id },
+  }));
+}
+---
+
+<Layout>
+  <article class="h-full px-10 lg:px-28 pt-14 pb-10">
+    <div>
+      <div class="flex mb-12">
+        <a
+          href="/#blog"
+          class="flex items-center justify w-10 h-10 rounded-full hover:bg-gray-200 transition duration-[400ms] transform hover:scale-110"
+        >
+          <Back />
+        </a>
+        <h2
+          class="text-3xl font-bold uppercase ml-4 tracking-tighter"
+          transition:name={`title ${article.id}`}
+        >
+          {article.title}
+        </h2>
+      </div>
+      <img
+        class="w-full h-[50vh] lg:h-[70vh] object-cover rounded-lg"
+        src={article.img}
+        alt="Imagen de artículo"
+        transition:name={`image ${article.id}`}
+      />
+      <p class="text-xl my-6 whitespace-break-spaces">
+        {article.content}
+      </p>
+    </div>
+  </article>
+</Layout>

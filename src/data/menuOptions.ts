@@ -1,19 +1,19 @@
 const menuOptions = [
   {
     label: "Servicios",
-    path: "#servicios",
+    path: "/#servicios",
   },
   {
     label: "Precios",
-    path: "#precios",
+    path: "/#precios",
   },
   {
     label: "Horario",
-    path: "#horario",
+    path: "/#horario",
   },
   {
     label: "Blog",
-    path: "#blog",
+    path: "/#blog",
   }
 ];
 

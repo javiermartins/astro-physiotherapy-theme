@@ -2,6 +2,7 @@
 import Back from "../../components/icons/Back.astro";
 import articles from "../../data/articles";
 import Layout from "../../layouts/Layout.astro";
+import clinicData from "../../data/clinicData";
 
 const { id } = Astro.params;
 const article = articles.find((article) => article.id.toString() === id);
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 }
 ---
 
-<Layout>
+<Layout title={`${clinicData.NAME} | Blog`}>
   <article class="h-full px-10 lg:px-28 pt-14 pb-10">
     <div>
       <div class="flex mb-12">

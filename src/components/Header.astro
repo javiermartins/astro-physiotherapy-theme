@@ -54,8 +54,9 @@ const { clinicData } = Astro.props;
               <li>
                 <a
                   href={option.path}
-                  class="text-xl block py-2 pr-4 pl-3 text-primary rounded lg:bg-transparent lg:p-0 transition-transform duration-300 transform hover:scale-110"
+                  class="text-xl block py-2 pr-4 pl-3 text-primary rounded lg:bg-transparent lg:p-0 transition-transform duration-300 transform lg:hover:scale-110"
                   aria-current="page"
+                  data-close-menu
                 >
                   {option.label}
                 </a>
@@ -74,5 +75,11 @@ const { clinicData } = Astro.props;
 
   menuBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
+  });
+
+  document.querySelectorAll("[data-close-menu]").forEach((item) => {
+    item.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
   });
 </script>

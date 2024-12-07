@@ -1,4 +1,4 @@
-<a href="astro-physiotherapy-theme.netlify.app/" target="_blank">
+<a href="https://astro-physiotherapy-theme.netlify.app/" target="_blank">
     <img src="public/img/readme.png" alt="Project image" />
 </a>
 

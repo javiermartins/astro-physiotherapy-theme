@@ -1,8 +1,6 @@
 ---
 import TopBar from "./TopBar.astro";
 import menuOptions from "../data/menuOptions";
-import Menu from "./icons/Menu.astro";
-import Close from "./icons/Close.astro";
 
 interface Props {
   clinicData: ClinicData;
@@ -38,8 +36,12 @@ const { clinicData } = Astro.props;
           class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
         >
           <span class="sr-only">Abrir menú</span>
-          <Menu />
-          <Close />
+          <img src="/img/menu.svg" alt="Abrir menú" class="menu-icon w-6 h-6" />
+          <img
+            src="/img/close.svg"
+            alt="Cerrar menú"
+            class="close-icon hidden w-6 h-6"
+          />
         </button>
       </div>
       <div
@@ -47,14 +49,14 @@ const { clinicData } = Astro.props;
         id="mobile-menu"
       >
         <ul
-          class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+          class="flex flex-col mb-4 font-medium lg:flex-row lg:space-x-8 lg:m-0"
         >
           {
             menuOptions.map((option) => (
               <li>
                 <a
                   href={option.path}
-                  class="text-xl block py-2 pr-4 pl-3 text-primary rounded lg:bg-transparent lg:p-0 transition-transform duration-300 transform lg:hover:scale-110"
+                  class="text-xl block py-2 pr-4 pl-3 text-primary rounded-md hover:bg-gray-200 md:hover:bg-white lg:bg-transparent lg:p-0 transition-transform duration-300 transform lg:hover:scale-110"
                   aria-current="page"
                   data-close-menu
                 >
@@ -69,17 +71,28 @@ const { clinicData } = Astro.props;
   </nav>
 </header>
 
+<style>
+  .menu-open .menu-icon {
+    display: none;
+  }
+  .menu-open .close-icon {
+    display: block;
+  }
+</style>
+
 <script>
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
 
   menuBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
+    menuBtn.classList.toggle("menu-open");
   });
 
   document.querySelectorAll("[data-close-menu]").forEach((item) => {
     item.addEventListener("click", () => {
       mobileMenu.classList.add("hidden");
+      menuBtn.classList.remove("menu-open");
     });
   });
 </script>

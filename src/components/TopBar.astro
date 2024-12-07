@@ -8,7 +8,12 @@ import contact from "../data/contact";
     {
       contact.map((info) => (
         <div class="mr-5 text-white hover:opacity-70 duration-300">
-          <a href={info.url} target={info.target} class="contact">
+          <a
+            href={info.url}
+            target={info.target}
+            class="contact"
+            aria-label={info.label}
+          >
             <info.icon />
             <span class="ml-2 hidden sm:flex">{info.text}</span>
           </a>

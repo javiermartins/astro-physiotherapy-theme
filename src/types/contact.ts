@@ -4,5 +4,6 @@ export interface Contact {
   text: string;
   url: string;
   target: string;
+  label: string;
   icon: AstroComponentFactory;
 }

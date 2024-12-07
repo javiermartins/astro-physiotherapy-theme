@@ -34,19 +34,19 @@ const { clinicData } = Astro.props;
           <ul class="flex flex-col gap-2 text-[22px]">
             {
               contact.map((info) => (
-                <li class="flex hover:opacity-70 duration-300">
-                  <info.icon />
-                  <a href={info.url} class="ml-2">
-                    {info.text}
+                <li class="flex w-fit hover:opacity-70 duration-300">
+                  <a href={info.url} class="flex">
+                    <info.icon />
+                    <span class="ml-2">{info.text}</span>
                   </a>
                 </li>
               ))
             }
-            <li class="flex hover:opacity-70 duration-300">
-              <Email />
-              <a href={`mailto:${clinicData.EMAIL}`} class="ml-2"
-                >{clinicData.EMAIL}</a
-              >
+            <li class="flex w-fit hover:opacity-70 duration-300">
+              <a href={`mailto:${clinicData.EMAIL}`} class="flex">
+                <Email />
+                <span class="ml-2">{clinicData.EMAIL}</span>
+              </a>
             </li>
           </ul>
         </div>

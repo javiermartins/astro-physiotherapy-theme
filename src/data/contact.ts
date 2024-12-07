@@ -9,12 +9,14 @@ const contact: Contact[] = [
         text: clinicData.UBICATION.text,
         url: clinicData.UBICATION.url,
         target: "_blank",
+        label: "Ver ubicación de la clínica",
         icon: Map
     },
     {
         text: clinicData.PHONE,
         url: `tel:${clinicData.PHONE}`,
         target: "_self",
+        label: `Llamar al ${clinicData.PHONE}`,
         icon: Phone
     },
 ];

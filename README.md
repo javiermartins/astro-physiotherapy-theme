@@ -1,4 +1,6 @@
-<img src="public/img/readme.png" alt="Project image" />
+<a href="astro-physiotherapy-theme.netlify.app/" target="_blank">
+    <img src="public/img/readme.png" alt="Project image" />
+</a>
 
 # Astro phisiotherapy theme
 
